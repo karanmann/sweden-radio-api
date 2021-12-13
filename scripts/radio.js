@@ -33,7 +33,7 @@ const buildFooter = (footerData) => {
 }
 
 const fetchRadioChannelData = () => {
-  const URL = "http://api.sr.se/api/v2/channels?format=json";
+  const URL = "https://api.sr.se/api/v2/channels?format=json";
 
   fetch(URL)
     .then((res) => res.json())
