@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;0,900;1,200;1,300;1,600;1,700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #d5e1ef;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner {
+  background: #aab4bf;
+  box-shadow:  17px 17px 33px #aab4bf,
+              -17px -17px 33px #ffffff;
+  width:100%;
+}
+
+.sr-logo {
+  margin: 3%;
+  width: 40%;
+}
+
+#channel-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  margin: 2%;
+  width: 70%;
+  height: 70%;
+  align-items: center;
+  background: #d5e1ef;
+  box-shadow:  17px 17px 33px #aab4bf,
+              -17px -17px 33px #ffffff;
+}
+
+.card-image {
+  width:100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card-discription {
+margin: 1rem;
+white-space: wrap;
+}
+
+.card-player {
+  background: #d5e1ef;
+  border-radius: 2rem;
+  box-shadow:  17px 17px 33px #918f8f,
+              -17px -17px 33px #aab4bf;
+}
+
+.programs-container {
+  background: #cbd7e4;
+  width: 100%;
+  margin-top: 6%;
+}
+
+
+@media (min-width: 600px) {
+
+  .radio-card {
+    width: 20rem;
+    height: 35rem;
+  }
+}
