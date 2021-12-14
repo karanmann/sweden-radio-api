@@ -1,12 +1,10 @@
 let cardsContainer = document.getElementById("channel-list");
-let footerContent = document.getElementById("footer-radio")
-// FETCH DATA
+let footerContent = document.getElementById("footer-radio");
 
 const buildChannelList = (cardData) => {
   let channelOutput = "";
 
   cardData.channels.map((channel) => {
-    // console.log(channel);
     channelOutput += `
       <div class="radio-card" >
         <img class="card-image" src=${channel.image}
@@ -29,7 +27,7 @@ const buildChannelList = (cardData) => {
 };
 
 const buildFooter = (footerData) => {
-  footerContent.innerHTML = `<p>${footerData.copyright}</p>`
+  footerContent.innerHTML = `<p>${footerData.copyright}</p>`;
 }
 
 const fetchRadioChannelData = () => {
@@ -38,10 +36,8 @@ const fetchRadioChannelData = () => {
   fetch(URL)
     .then((res) => res.json())
     .then((channelData) => {
-      // console.log(channelData);
       buildChannelList(channelData);
       buildFooter(channelData);
-
     })
     .catch((error) => {
       console.log(error, "There has been an error");
