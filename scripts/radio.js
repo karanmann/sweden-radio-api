@@ -13,12 +13,6 @@ const buildChannelList = (cardData) => {
           <audio class="card-player" controls> 
             <source src=${channel.liveaudio.url} type="audio/mpeg">
           </audio>
-          <h5>
-            <span>Source : </span>
-            <a href=${channel.siteurl}>
-              <span>${channel.name}</span>
-            </a>  
-          </h5>
         </div>
       </div>
     `;

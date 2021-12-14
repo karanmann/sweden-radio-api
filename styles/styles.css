@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;0,900;1,200;1,300;1,600;1,700&display=swap');
 
+/* GLOBAL STYLING */
+
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +25,34 @@ section > h2 {
   font-weight: 300;
 }
 
+a {
+  text-decoration:none;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration:none;
+  color: black;
+}
+
+a:hover {
+  letter-spacing: 1px;
+}
+
+
+/* BANNER */
+
+.sr-logo {
+  margin: 1%;
+  width: 40%;
+}
+
 .banner {
   background: #aab4bf;
   box-shadow:  17px 17px 33px #aab4bf,
@@ -30,12 +60,11 @@ section > h2 {
   width:100%;
 }
 
-.sr-logo {
-  margin: 3%;
-  width: 40%;
-}
 
-#channel-list {
+/* RADIO CARDS */
+
+#channel-list,
+#program-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -60,6 +89,12 @@ section > h2 {
   font-size: .9rem;
 }
 
+.radio-card:hover,
+.program-card:hover {
+  box-shadow:  inset 17px 17px 33px #aab4bf,
+              -17px -17px 33px #ffffff;
+}
+
 .card-image {
   width:100%;
   height: 50%;
@@ -67,8 +102,8 @@ section > h2 {
 }
 
 .card-discription {
-margin: 1rem;
-white-space: wrap;
+  margin: 1rem;
+  white-space: wrap;
 }
 
 .card-player {
@@ -76,19 +111,68 @@ white-space: wrap;
   border-radius: 2rem;
   box-shadow:  17px 17px 33px #918f8f,
               -17px -17px 33px #aab4bf;
+  margin-bottom: 2rem;
 }
+
+
+/* PROGRAMS CARDS */
 
 .programs-container {
   background: #cbd7e4;
-  width: 100%;
   margin-top: 6%;
 }
 
+.program-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  background: #d5e1ef;
+  box-shadow:  17px 17px 33px #aab4bf,
+              -17px -17px 33px #ffffff;
+  font-weight: 300;
+  font-size: .9rem;
+  margin: 3%;
+  border-radius: 20px;
+}
+
+.program-card-image{
+  width: 100%;
+  height:50%;
+  border-radius: 20px 0 0 20px;
+}
+
+
+
+/* MEDIA QUERIES */
+
 
 @media (min-width: 600px) {
-
+  a {
+    width: 35rem
+  }
   .radio-card {
     width: 20rem;
     height: 30rem;
+  }
+
+  .program-card {
+    width: 35rem;
+    height: 15rem;
+    flex-direction: row;
+  }
+
+  .program-card-image{
+  width: 15rem;
+  height: 15rem;
+  }
+
+  .program-card-details {
+    width: 50%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }

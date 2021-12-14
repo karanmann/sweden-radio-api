@@ -1,5 +1,26 @@
 let programContainer = document.getElementById("program-list")
 
+const buildProgramList = (listData) => {
+  let programsOutput = "";
+
+  listData.programs.map((program) => {
+    console.log(program)
+    programsOutput += `
+        <a href=${program.programurl} target="_blank">
+          <div class="program-card">
+            <img class="program-card-image" src=${program.programimage} alt=${program.name}/>
+            <div class="program-card-details">
+              <h5>${program.name}</h5>
+              <p>${program.description}</p>
+              <p>${program.broadcastinfo == undefined ? "-" : program.broadcastinfo}</p>
+            </div>
+          </div>
+        </a>
+      
+    `;
+    programContainer.innerHTML = programsOutput;
+  });
+};
 
 const fetchProgramData = () => {
 
@@ -8,7 +29,7 @@ const fetchProgramData = () => {
   fetch(URL)
     .then((res) => res.json())
     .then((programData) => {
-      console.log(programData);
+      buildProgramList(programData);
     })
     .catch((error) => {
       console.log(error, "There has been an error");
