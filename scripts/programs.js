@@ -1,10 +1,25 @@
 let programContainer = document.getElementById("program-list")
 
+const fetchProgramData = () => {
+
+  const URL = "https://api.sr.se/api/v2/programs/index?format=json";
+
+  fetch(URL)
+    .then((res) => res.json())
+    .then((programData) => {
+      buildProgramList(programData);
+    })
+    .catch((error) => {
+      console.log(error, "There has been an error");
+    });
+};
+
+fetchProgramData();
+
 const buildProgramList = (listData) => {
   let programsOutput = "";
 
   listData.programs.map((program) => {
-    console.log(program)
     programsOutput += `
         <a href=${program.programurl} target="_blank">
           <div class="program-card">
@@ -22,18 +37,3 @@ const buildProgramList = (listData) => {
   });
 };
 
-const fetchProgramData = () => {
-
-  const URL = "https://api.sr.se/api/v2/programs/index?format=json";
-
-  fetch(URL)
-    .then((res) => res.json())
-    .then((programData) => {
-      buildProgramList(programData);
-    })
-    .catch((error) => {
-      console.log(error, "There has been an error");
-    });
-};
-
-fetchProgramData();

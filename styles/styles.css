@@ -45,6 +45,9 @@ a:hover {
   letter-spacing: 1px;
 }
 
+audio {
+  width: 90%;
+}
 
 /* BANNER */
 

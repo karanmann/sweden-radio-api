@@ -1,6 +1,22 @@
 let cardsContainer = document.getElementById("channel-list");
 let footerContent = document.getElementById("footer-radio");
 
+const fetchRadioChannelData = () => {
+  const URL = "https://api.sr.se/api/v2/channels?format=json";
+
+  fetch(URL)
+    .then((res) => res.json())
+    .then((channelData) => {
+      buildChannelList(channelData);
+      buildFooter(channelData);
+    })
+    .catch((error) => {
+      console.log(error, "There has been an error");
+    });
+};
+
+fetchRadioChannelData();
+
 const buildChannelList = (cardData) => {
   let channelOutput = "";
 
@@ -23,19 +39,3 @@ const buildChannelList = (cardData) => {
 const buildFooter = (footerData) => {
   footerContent.innerHTML = `<p>${footerData.copyright}</p>`;
 }
-
-const fetchRadioChannelData = () => {
-  const URL = "https://api.sr.se/api/v2/channels?format=json";
-
-  fetch(URL)
-    .then((res) => res.json())
-    .then((channelData) => {
-      buildChannelList(channelData);
-      buildFooter(channelData);
-    })
-    .catch((error) => {
-      console.log(error, "There has been an error");
-    });
-};
-
-fetchRadioChannelData();
