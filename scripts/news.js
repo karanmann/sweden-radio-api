@@ -1,9 +1,7 @@
-const NEWS_URL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=88804fd27daf4133b20f9cd7037177bf"
 const displayNews = document.getElementById("latest-news")
 
-
 const fetchNewsData = () => {
-
+  const NEWS_URL = "https://newsapi.org/v2/top-headlines?country=se&apiKey=88804fd27daf4133b20f9cd7037177bf"
   fetch(NEWS_URL)
     .then(res => res.json())
     .then(newsData => {
