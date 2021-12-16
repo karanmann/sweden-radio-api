@@ -21,6 +21,7 @@ const displayNewsCards = (newsData) => {
     let d = new Date(news.publishedAt);
     let hours = d.getUTCHours(); // Hours
     let minutes = d.getUTCMinutes();
+    
     newsOutput += `
         <a class="news-card" href=${news.url} target="default">
           <img class="news-image" src=${news.urlToImage == undefined ? "../assets/sr01-700x217.jpeg" : news.urlToImage} alt=${news.name}>
