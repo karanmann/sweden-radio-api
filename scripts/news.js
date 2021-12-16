@@ -16,7 +16,7 @@ fetchNewsData()
 const displayNewsCards = (newsData) => {
   let newsOutput = "";
 
-  newsData.articles.map((news) => {
+  newsData.articles.slice(0,12).map((news) => {
     
     let d = new Date(news.publishedAt);
     let hours = d.getUTCHours(); // Hours

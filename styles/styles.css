@@ -115,6 +115,10 @@ audio {
   padding: 2rem;
 }
 
+.radio-channels {
+  background: #bcc7d3;
+}
+
 .radio-card,
 .news-card {
   display: flex;
@@ -158,8 +162,7 @@ audio {
 /* PROGRAMS CARDS */
 
 .programs-container {
-  background: #cbd7e4;
-  margin-top: 6%;
+  margin-top: 1%;
 }
 
 .program-card {
@@ -211,6 +214,15 @@ audio {
 
 .icon-link:hover {
   box-shadow: inset 17px 17px 33px #918f8f, -17px -17px 33px #aab4bf;
+}
+
+footer {
+  background: #bcc7d3;
+  width: 100%;
+  text-align: center;
+  padding: 1% 0;
+  margin-top: 1%;
+  box-shadow: 17px 17px 33px #918f8f, -17px -17px 33px #aab4bf;
 }
 
 /* MEDIA QUERIES */
