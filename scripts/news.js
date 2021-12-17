@@ -1,8 +1,8 @@
 const displayNews = document.getElementById("latest-news")
 
-const fetchNewsData = () => {
+const fetchNewsData = async() => {
   const NEWS_URL = "https://newsapi.org/v2/top-headlines?country=se&apiKey=88804fd27daf4133b20f9cd7037177bf"
-  fetch(NEWS_URL)
+  await fetch(NEWS_URL)
     .then(res => res.json())
     .then(newsData => {
       displayNewsCards(newsData)

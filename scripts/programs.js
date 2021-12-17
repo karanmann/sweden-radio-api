@@ -1,10 +1,10 @@
 let programContainer = document.getElementById("program-list")
 
-const fetchProgramData = () => {
+const fetchProgramData = async () => {
 
   const URL = "https://api.sr.se/api/v2/programs/index?format=json";
 
-  fetch(URL)
+  await fetch(URL)
     .then((res) => res.json())
     .then((programData) => {
       buildProgramList(programData);

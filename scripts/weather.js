@@ -1,8 +1,9 @@
 const API_ONE_DAY = `https://api.openweathermap.org/data/2.5/weather?q=stockholm&appid=a77136eb90fd8d858de1f60c1ae1ee51`;
 
 const setWeatherData = document.getElementById("weather");
-const fetchWeatherData = () => {
-  fetch(API_ONE_DAY)
+const fetchWeatherData = async() => {
+
+  await fetch(API_ONE_DAY)
     .then((res) => res.json())
     .then((weatherData) => displayWeatherData(weatherData));
 };
@@ -25,7 +26,6 @@ displayWeatherData = (weatherData) => {
   const feelsLike = Math.round(weatherData.main.feels_like - 273);
   const maxTemperature = Math.round(weatherData.main.temp_max - 273);
   const minTemperature = Math.round(weatherData.main.temp_min - 273);
-
 
   let weatherOutput = "";
 
